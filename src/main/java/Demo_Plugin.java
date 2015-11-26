@@ -66,7 +66,7 @@ public class Demo_Plugin implements PlugInFilter {
 
 		// default value is 0.00, 2 digits right of the decimal point
 		gd.addNumericField("value", 0.00, 2);
-		gd.addStringField("name", "John");
+		gd.addStringField("name", "Mike");
 
 		gd.showDialog();
 		if (gd.wasCanceled())
