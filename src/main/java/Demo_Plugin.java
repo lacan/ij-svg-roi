@@ -21,7 +21,7 @@ import ij.process.ImageProcessor;
  *
  * @author The Fiji Team
  */
-public class Process_Pixels implements PlugInFilter {
+public class Demo_Plugin implements PlugInFilter {
 	protected ImagePlus image;
 
 	// image property members
@@ -174,7 +174,7 @@ public class Process_Pixels implements PlugInFilter {
 	 */
 	public static void main(String[] args) {
 		// set the plugins.dir property to make the plugin appear in the Plugins menu
-		Class<?> clazz = Process_Pixels.class;
+		Class<?> clazz = Demo_Plugin.class;
 		String url = clazz.getResource("/" + clazz.getName().replace('.', '/') + ".class").toString();
 		String pluginsDir = url.substring(5, url.length() - clazz.getName().length() - 6);
 		System.setProperty("plugins.dir", pluginsDir);
