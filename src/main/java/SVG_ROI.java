@@ -1,8 +1,4 @@
-import java.io.File;
-import java.io.IOException;
-
-import java.net.URI;
-
+import org.apache.batik.*;
 import org.apache.batik.bridge.BridgeContext;
 import org.apache.batik.bridge.DocumentLoader;
 import org.apache.batik.bridge.GVTBuilder;
@@ -11,10 +7,16 @@ import org.apache.batik.bridge.UserAgentAdapter;
 import org.apache.batik.dom.svg.SAXSVGDocumentFactory;
 import org.apache.batik.dom.svg.SVGOMSVGElement;
 import org.apache.batik.util.XMLResourceDescriptor;
-
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import ij.IJ;
+
+import java.net.URI;
+import java.io.Console;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Responsible for converting all SVG path elements into MetaPost curves.
@@ -42,7 +44,7 @@ public class SVG_ROI {
     int pathNodeCount = pathNodes.getLength();
 
     for( int iPathNode = 0; iPathNode < pathNodeCount; iPathNode++ ) {
-      pathNodes.item( iPathNode ).toString();
+    	System.out.println(pathNodes.item(iPathNode).toString());
     }
   }
 
@@ -61,8 +63,8 @@ public class SVG_ROI {
    * 
    * @return The SVG document typecast into an SVGOMSVGElement.
    */
-  private SVGOMSVGElement getSVGDocumentRoot() {
-    return (SVGOMSVGElement)getSVGDocument().getDocumentElement();
+  private Element getSVGDocumentRoot() {
+    return getSVGDocument().getDocumentElement();
   }
 
   /**
@@ -124,7 +126,7 @@ public class SVG_ROI {
    * @throws IOException Error reading the SVG file.
    */
   public static void main( String args[] ) throws IOException {
-    URI uri = new File( args[0] ).toURI();
+    URI uri = new File( "D:\\People\\Bianca\\svg\\Annotation2014_141_0000.svg" ).toURI();
     SVG_ROI svgroi = new SVG_ROI( uri.toString() );
     svgroi.run();
   }
