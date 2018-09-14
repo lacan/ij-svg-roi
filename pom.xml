@@ -21,7 +21,7 @@
   <repository>
     <id>imagej.public</id>
     <url>http://maven.imagej.net/content/groups/public</url>
-  </repository>
+  </repository>  
 </repositories>
 	<developers>
 		<developer>
@@ -48,12 +48,18 @@
 
 	<properties>
 		<main-class>SVG_ROI</main-class>
+		<imagej.app.directory>C:/Fiji</imagej.app.directory>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>net.imagej</groupId>
 			<artifactId>ij</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sc.fiji</groupId>
+			<artifactId>fiji-lib</artifactId>
+			<version>2.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>batik</groupId>
